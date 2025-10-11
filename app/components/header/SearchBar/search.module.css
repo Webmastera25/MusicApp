@@ -1,0 +1,31 @@
+.searchContainer {
+  display: flex;
+  width: 1300px;
+  max-width: 703px;
+  align-items: center;
+}
+
+  .loop {
+    display: flex;
+    margin: 15px;
+    position: absolute;
+    cursor: pointer;
+  }
+  .searchInput {
+    display: flex;
+    width: 100%;
+    max-width: 703px;
+    padding: 15px 54px;
+    border-radius: 33px;
+    font-size: 15px;
+    color: white;
+    background-color: #191A1F;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .searchInput:focus {
+    border-color: #d92332;
+    box-shadow: 0 0 8px rgba(217, 35, 50, 0.3);
+  }
+  

@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 24px;
+    max-width: 1366px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbarLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.playlist {
+    display: flex;
+    padding: 10px 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    background-color: #191A1F;
+    gap: 10px;
+}
+
+.playlisticon {
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #191A1F;
+    gap: 10px;
+}
+
+.navList {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.navList:hover {
+    color: #ffd700;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+.navItem {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.navItem:hover {
+    font-size: 20px;
+    transform: translateY(-5px);
+  }
+
+.addMusic {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-color: #191A1F;
+    gap: 10px;
+}
+
+.addMusic:hover {
+    transform: translateY(-5px);
+}
+
+.userRegister {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #191A1F;
+    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.userRegister:hover {
+    transform: translateY(-5px);
+}

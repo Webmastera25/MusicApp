@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+
+.main {
+    display: flex;
+    width: 100%;
+    max-width: 1366px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+  }
+  
+.daylistContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1313px;
+  height: 330px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-image: url('/image/dayhit.png');
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+  
+  .daylistText {
+    display: flex;
+    margin: 10px;
+    padding: 50px 42px 10px ;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    gap: 19px;
+  }
+  
+  .names {
+    font-family: "Delius", cursive;
+    color: #0F83FF;
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%; 
+    letter-spacing: -0.368px;
+  }
+  .name {
+    text-transform: capitalize;
+    color: #EEF2F6;
+    font-family: "SF Pro Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.472px;
+  }
+
+  .musicName {
+    color: #AEACAC;
+    font-family: "SF Pro Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.414px;
+}
+
+  .number {
+    color: #DEDDDD;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.552px;
+  }
+  
+  .buttonListen {
+    display: flex;
+    width: 100%;
+    max-width: 216px;
+    margin-left: 45px;
+    padding: 10px 62px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 33px;
+    border: 1px solid #0071EB;
+    background: #0F83FF;
+    box-shadow: 0 4px 7.2px 0 rgba(255, 255, 255, 0.25) inset, 0 2px 7.6px 0 rgba(15, 131, 255, 0.50);
+    cursor: pointer;
+  }
+  
+  .hittContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+  
+  .topHits {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 860px;
+    gap: 17px;
+  }
+  
+  .topTexts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .topCards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topCharts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 36px;
+  }
+
+
+  .chartText {
+    display: flex;
+    color: #DEDDDD;
+    font-family: "SF Pro Text";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.368px;
+  }
+  
+  .chartBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+.minicardBox {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  
+.miniCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+  }
+  
+.musicContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.artistBox {
+  display: flex;
+  width: 100%;
+  gap: 82px;
+}
+
+.popArtist {
+  display: inline-flex;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.popHead {
+  display: flex;
+  text-transform: capitalize;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.artName {
+  color: #DEDDDD;
+  text-align: center;
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.368px;
+}
+
+.popularBox {
+  display: flex;
+  text-transform: capitalize;
+  gap: 20px;
+}
+
+.popArt {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 9px;
+}
+
+.weeklyBox {
+  display: flex;
+  text-transform: capitalize;
+  width: 100%;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.weekly {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 530px;
+  gap:20px;
+}
+
+.weeklyHit {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.playlistBox {
+  display: flex;
+  text-transform: capitalize;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  gap: 37px;
+}
+
+.youPlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

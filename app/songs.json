@@ -1,0 +1,104 @@
+
+[
+    {
+      "id": 1,
+      "artist": "IV დასი",
+      "title": " გურული ბიჭები",
+      "audioSrc": "/audio/IV დასი (VACHE)-გურული ბიჭები (prod by vache).mp3",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5f69f1f8c299f55d047eb2f41ba3b52f/0x1900-000000-80-0-0.jpg",
+      "category": "weekly"
+    },
+    {
+      "id": 2,
+      "artist": "ლექსსენი",
+      "title": "შამასხდებიან",
+      "audioSrc": "/audio/Lexseni - Shamaskhdebian  ლექსსენი - შამასხდებიან(ფანდური ზურა მირზიაშვილი).mp3",
+      "cover": "https://i1.sndcdn.com/artworks-000209408389-d4yo0e-t500x500.jpg",
+      "category": "weekly"
+    },
+    {
+      "id": 3,
+      "artist": "ბანი",
+      "title": "ჭინჭილა",
+      "audioSrc": "/audio/ბანი-ჭინჭილა  bani-chinchila.mp3",
+      "cover": "https://i.ytimg.com/vi/mhhKWxscE1A/hqdefault.jpg",
+      "category": "weekly"
+    },
+      {
+        "id": 4,
+        "artist": "ჯგუფი მირაჟი",
+        "title": " გოგონია ქიცი ქიცი",
+        "audioSrc": "/audio/ჯგუფი მირაჟი - გოგონია ქიცი ქიცი.mp3",
+        "cover": "https://i.ytimg.com/vi/HgZxnvd6QM8/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4AC6AKKAgwIABABGH8gEygsMA8=&rs=AOn4CLDwBDzq1Ftv1PIOhGyv3iXGwe-3WA",
+        "category": "weekly"
+      },
+      {
+        "id": 5,
+        "artist": "ჯგუფი ბანი",
+        "title": "2015-წ ჰიტები ",
+        "audioSrc": "/audio/ჯგუფი ბანი 2015 - საუკეთესო ჰიტების კრებული ერთად JGUFI BANI 2015 - YVELA SIMGERA Best songs.mp3",
+        "cover": "https://i.ytimg.com/vi/mhhKWxscE1A/hqdefault.jpg",
+        "category": "weekly"
+      },
+      {
+        "id": 6,
+        "artist": "ურსა",
+        "title": "ნუ გიყვარს ქალავ",
+        "audioSrc": "/audio/ნუ გიყვარს ქალავ.mp3",
+        "cover": "https://cdn.fortuna.ge/app/uploads/2018/11/22687714-1763214940416464-128297576061669150-n-2020-11-22_09-14-15_720433.jpg",
+        "category": "weekly"
+      },
+
+    {
+      "id": 7,
+      "artist": "კომედი შოუ",
+      "title": "კრიმანჭული",
+      "audioSrc": "/audio/კომედი შოუ გურულები კრიმანჭული.mp3",
+      "cover": "https://i.ytimg.com/vi/eeK3bl9S2h8/mqdefault.jpg",
+      "category": "monthly"
+    },
+    {
+      "id": 8,
+      "artist": "კაბუ",
+      "title": "მიყვარხარ",
+      "audioSrc": "/audio/კაბუ & ღამის შოუს ბენდი  არ გეტყვი რომ მიყვარხარ.mp3",
+      "cover": "https://cdn.fortuna.ge/app/uploads/2023/02/331067597-746424090433603-3113193935092751097-n-2023-02-24_16-43-44_382606.jpg",
+      "category": "monthly"
+    },
+    {
+      "id": 9,
+      "artist": "კომედი შოუ",
+      "title": "აზნაური",
+      "audioSrc": "/audio/კომედი აზნაური მოდი ვიცეკვოთ ერთად.mp3",
+      "cover": "https://i.ytimg.com/vi/ZtnGLNjtsXg/maxresdefault.jpg",
+      "category": "monthly"
+    },
+      {
+        "id": 10,
+        "artist": "რევაზ ფიფია",
+        "title": "ახლა როგორ მინდა",
+        "audioSrc": "/audio/REVAZ PIPIA & THAMLIANI - ახლა როგორ მინდა  Axla rogor minda.mp3",
+        "cover": "https://i.ytimg.com/vi/rycdUBPcXmc/maxresdefault.jpg",
+        "category": "monthly"
+      },
+      {
+        "id": 11,
+        "artist": "ლექსენი",
+        "title": "ლექსსენი - მთაში",
+        "audioSrc": "/audio/Lexseni - Mtashi ლექსსენი - მთაში.mp3",
+        "cover": "https://i.ytimg.com/vi/ueMk1aArjnQ/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGF8gXyhfMA8=&rs=AOn4CLCIaZFHLPKiNA2UkVrsSTMumZa6Ng",
+        "category": "monthly"
+      },
+      {
+        "id": 12,
+        "artist": "გიმსი",
+        "title": "ნინაო ",
+        "audioSrc": "/audio/GIMS  - NINAO (Clip officiel).mp3",
+        "cover": "https://i1.sndcdn.com/artworks-zUaw81h7zUto-0-t500x500.jpg",
+        "category": "monthly"
+      }
+  ]
+  
+  
+  
+  

@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Cantarell;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px
+}
+
+.navItem {
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+  color: inherit;
+}
+
+.navItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar {
+  display: flex;
+  width: 100%;
+  max-width: 1190px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.navItem:hover {
+  background-color: black; 
+  color: red; 
+}
+
+.input {
+  display: flex;
+  max-width: 680px;
+  padding-left: 40px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  padding: 12px 137px 12px 32px;
+  align-items: center;
+  border-radius: 32px;
+  background: rgba(21, 21, 21, 0.80);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.playerButton {
+  cursor: pointer;
+}
+
+.rotatingIcon {
+  position: absolute;
+  top: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
+
+.playing {
+  animation: spin 3s linear infinite;
+  animation-play-state: running;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.playbackRateBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.songBox {
+  padding: 14px 14px 16px 14px;
+  margin: 15px;
+  border-radius: 32px;
+  background: rgba(21, 21, 21, 0.80);
+}
+.volumeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.songsBox {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+  gap: 58px;
+}
+
+.songBoxi {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.playerContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 222px;
+  width: 100%;
+  max-width: 670px;
+  padding: 50px;
+  top: 200px;
+}
+
+.playerContainer:hover {
+  background-color: rgba(21, 21, 21, 0.80);
+  box-shadow: 10px 16px 19px 22px #ff0000;
+}
+
+.playerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.playersBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.playerText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 30px;
+  gap: 20px;
+}
+
+.playBox {
+  display: flex;
+  gap: 58px;
+}
+
+.playerIcon:hover {
+   cursor: pointer;
+   
+}
+
+.progressContainer {
+  width: 100%;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.progressBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  border: none;
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.progressBar::-moz-range-thumb {
+  background: red;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volumeSlider {
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background: white;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 18px;
+  background: red;
+  border: none;
+  border-radius: 50%;
+  margin-top: -4px;
+  cursor: pointer;
+}
+.volumeSlider::-moz-range-thumb {
+  background: red;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.playerButton {
+  background-color: transparent;
+  border: none;
+}
+
+
+.canvas {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  border-radius: 50%;
+}
+
