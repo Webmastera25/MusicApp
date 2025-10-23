@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./components/header/Header";
 import { useState, useRef, useEffect } from "react";
@@ -8,6 +7,7 @@ import songs from "./songs.json";
 import Player from "./components/player/Player";
 import { Content } from "./components/content/Content";
 import { Footer } from "./components/footer/Footer";
+import RadioPlayer from "./components/radio/RadioPlayer";
 
 interface Song {
   id: number;
@@ -29,6 +29,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playbackRate, setPlaybackRate] = useState(1);
+  const [activePlayer, setActivePlayer] = useState<'mp3' | 'radio'>('mp3');
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const discRef = useRef<HTMLImageElement | null>(null);
@@ -49,8 +50,8 @@ export default function Home() {
     const prevIndex = isShuffle
       ? Math.floor(Math.random() * playlist.length)
       : currentIndex === 0
-      ? playlist.length - 1
-      : currentIndex - 1;
+        ? playlist.length - 1
+        : currentIndex - 1;
     setCurrentIndex(prevIndex);
     setIsPlaying(true);
   };
@@ -81,75 +82,83 @@ export default function Home() {
     }
   };
 
- 
-  // When currentSong or isPlaying changes -> ensure audio element loads the new src and plays if needed
   useEffect(() => {
     if (!audioRef.current) return;
-
-    // reset time/load the new source
     try {
-      // Pause first to avoid race
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
-      // Ensure browser re-reads the <source> element
       audioRef.current.load();
-    } catch (err) {
-      // ignore
-    }
-
+    } catch (err) {}
     if (isPlaying) {
-      audioRef.current
-        .play()
-        .catch((err) => {
-          // autoplay policies may block play(); but because play is triggered by user click it should normally succeed.
-          console.warn("play() failed:", err);
-        });
+      audioRef.current.play().catch((err) => console.warn("play() failed:", err));
     } else {
-      // keep paused
       audioRef.current.pause();
     }
-  }, [currentIndex, currentSong.id, isPlaying]); // depend on id to ensure re-run on new song
+  }, [currentIndex, currentSong.id, isPlaying]);
 
   return (
     <div className={styles.page}>
       <header>
-
         <Header />
-        
       </header>
+
       <main className={styles.main}>
 
         <Content />
-        
-        <Player
-           currentSong={currentSong}
-              isPlaying={isPlaying}
-              onPlayPause={togglePlayPause}
-              onNext={handleNext}
-              onPrev={handlePrev}
-              audioRef={audioRef}
-              discRef={discRef}
-              currentTime={currentTime}
-              duration={duration}
-              onSeek={handleSeek}
-              onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
-              onEnded={handleEnded}
-              volume={volume}
-              setVolume={setVolume}
-              isShuffle={isShuffle}
-              toggleShuffle={() => setIsShuffle((prev) => !prev)}
-              isRepeat={isRepeat}
-              toggleRepeat={() => setIsRepeat((prev) => !prev)}
-              playbackRate={playbackRate}
-              changePlaybackRate={() => {
-                const rates = [1, 1.5, 2];
-                const idx = rates.indexOf(playbackRate);
-                setPlaybackRate(rates[(idx + 1) % rates.length]);
-        }}/>
+
+ {/* --- რადიო და მუსიკის გადამრთველი ღილაკები --- */}
+ <div className={styles.toggleButtons}>
+          <button
+            className={`${styles.toggleBtn} ${activePlayer === 'mp3' ? styles.active : ''}`}
+            onClick={() => setActivePlayer('mp3')}
+          >
+            🎵 MP3 Player
+          </button>
+
+          <button
+            className={`${styles.toggleBtn} ${activePlayer === 'radio' ? styles.active : ''}`}
+            onClick={() => setActivePlayer('radio')}
+          >
+            📻 Radio
+          </button>
+        </div>
+
+
+        {activePlayer === 'mp3' && (
+          <Player
+            currentSong={currentSong}
+            isPlaying={isPlaying}
+            onPlayPause={togglePlayPause}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            audioRef={audioRef}
+            discRef={discRef}
+            currentTime={currentTime}
+            duration={duration}
+            onSeek={handleSeek}
+            onTimeUpdate={handleTimeUpdate}
+            onLoadedMetadata={handleLoadedMetadata}
+            onEnded={handleEnded}
+            volume={volume}
+            setVolume={setVolume}
+            isShuffle={isShuffle}
+            toggleShuffle={() => setIsShuffle((prev) => !prev)}
+            isRepeat={isRepeat}
+            toggleRepeat={() => setIsRepeat((prev) => !prev)}
+            playbackRate={playbackRate}
+            changePlaybackRate={() => {
+              const rates = [1, 1.5, 2];
+              const idx = rates.indexOf(playbackRate);
+              setPlaybackRate(rates[(idx + 1) % rates.length]);
+            }}
+          />
+        )}
+
+        {activePlayer === 'radio' && <RadioPlayer />}
       </main>
+
       <footer className={styles.footer}>
-            <Footer />
+        <Footer />
       </footer>
     </div>
   );

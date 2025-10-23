@@ -6,6 +6,7 @@
 
 body {
   background: linear-gradient(0deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 19%, rgba(0, 207, 252, 1) 48%, rgba(9, 9, 121, 1) 74%, rgba(2, 0, 36, 1) 100%);
+  color: white;
 }
 
 a {
