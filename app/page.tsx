@@ -31,12 +31,15 @@ export default function Home() {
   const [playbackRate, setPlaybackRate] = useState(1);
   const [activePlayer, setActivePlayer] = useState<'mp3' | 'radio'>('mp3');
 
+  const [isDarkMode, setIsDarkMode] = useState(false); // 🌙 Added dark mode toggle
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const discRef = useRef<HTMLImageElement | null>(null);
 
   const currentSong = playlist[currentIndex];
 
   const togglePlayPause = () => setIsPlaying((prev) => !prev);
+  const toggleDarkMode = () => setIsDarkMode((prev) => !prev); // 🌙 toggle handler
 
   const handleNext = () => {
     const nextIndex = isShuffle
@@ -97,17 +100,23 @@ export default function Home() {
   }, [currentIndex, currentSong.id, isPlaying]);
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${isDarkMode ? styles.dark : styles.light}`}>
       <header>
         <Header />
       </header>
 
-      <main className={styles.main}>
+      {/* 🌙 Theme Toggle Button */}
+      <div className={styles.themeToggle}>
+        <button onClick={toggleDarkMode} className={styles.themeBtn}>
+          {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        </button>
+      </div>
 
+      <main className={styles.main}>
         <Content />
 
- {/* --- რადიო და მუსიკის გადამრთველი ღილაკები --- */}
- <div className={styles.toggleButtons}>
+        {/* --- რადიო და მუსიკის გადამრთველი ღილაკები --- */}
+        <div className={styles.toggleButtons}>
           <button
             className={`${styles.toggleBtn} ${activePlayer === 'mp3' ? styles.active : ''}`}
             onClick={() => setActivePlayer('mp3')}
@@ -122,7 +131,6 @@ export default function Home() {
             📻 Radio
           </button>
         </div>
-
 
         {activePlayer === 'mp3' && (
           <Player

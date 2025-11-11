@@ -26,8 +26,8 @@
     },
       {
         "id": 4,
-        "artist": "ჯგუფი მირაჟი",
-        "title": " გოგონია ქიცი ქიცი",
+        "artist": "მირაჟი",
+        "title": " ქიცი ქიცი",
         "audioSrc": "/audio/ჯგუფი მირაჟი - გოგონია ქიცი ქიცი.mp3",
         "cover": "https://i.ytimg.com/vi/HgZxnvd6QM8/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4AC6AKKAgwIABABGH8gEygsMA8=&rs=AOn4CLDwBDzq1Ftv1PIOhGyv3iXGwe-3WA",
         "category": "weekly"

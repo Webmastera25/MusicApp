@@ -4,20 +4,22 @@
 
 
 .main {
-    display: flex;
-    width: 100%;
-    max-width: 1366px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 33px;
-  }
+  display: flex;
+  width: 100%;
+  max-width: 1366px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 33px;
+}
   
 .daylistContainer {
   display: flex;
   width: 100%;
-  max-width: 1313px;
+  max-width: 1366px;
   height: 330px;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   flex-direction: column;
   background-image: url('/image/dayhit.png');
@@ -27,145 +29,137 @@
 }
 
   
-  .daylistText {
-    display: flex;
-    margin: 10px;
-    padding: 50px 42px 10px ;
-    flex-direction: column;
-    align-items: flex-start;
-    color: white;
-    gap: 19px;
-  }
-  
-  .names {
-    font-family: "Delius", cursive;
-    color: #0F83FF;
-    font-size: 27px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 150%; 
-    letter-spacing: -0.368px;
-  }
-  .name {
-    text-transform: capitalize;
-    color: #EEF2F6;
-    font-family: "SF Pro Text";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: -1.472px;
-  }
-
-  .musicName {
-    color: #AEACAC;
-    font-family: "SF Pro Text";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: -0.414px;
+.daylistText {
+  display: flex;
+  margin: 10px;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 19px;
 }
 
-  .number {
-    color: #DEDDDD;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    letter-spacing: -0.552px;
-  }
+.name {
+  text-transform: capitalize;
+  color: #EEF2F6;
+  font-family: "Delius", cursive;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.musicName {
+  color: #AEACAC;
+  font-family: "SF Pro Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.414px;
+}
+
+.number {
+  color: #DEDDDD;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.552px;
+}
   
-  .buttonListen {
-    display: flex;
-    width: 100%;
-    max-width: 216px;
-    margin-left: 45px;
-    padding: 10px 62px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 33px;
-    border: 1px solid #0071EB;
-    background: #0F83FF;
-    box-shadow: 0 4px 7.2px 0 rgba(255, 255, 255, 0.25) inset, 0 2px 7.6px 0 rgba(15, 131, 255, 0.50);
-    cursor: pointer;
-  }
+.buttonListen {
+  display: flex;
+  width: 100%;
+  max-width: 216px;
+  margin-left: 45px;
+  padding: 10px 62px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 33px;
+  border: 1px solid #0071EB;
+  background: #0F83FF;
+  box-shadow: 0 4px 7.2px 0 rgba(255, 255, 255, 0.25) inset, 0 2px 7.6px 0 rgba(15, 131, 255, 0.50);
+  cursor: pointer;
+}
   
-  .hittContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 22px;
-  }
+.hittContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 22px;
+}
   
-  .topHits {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 860px;
-    gap: 17px;
-  }
+.topHits {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 17px;
+}
   
-  .topTexts {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.topTexts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
   
-  .topCards {
-    display: flex;
-    gap: 20px;
-  }
+.topCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
   
-  .cards {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .topCharts {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
-  }
+.topCharts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
 
 
-  .chartText {
-    display: flex;
-    color: #DEDDDD;
-    font-family: "SF Pro Text";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.368px;
-  }
+.chartText {
+  display: flex;
+  color: #DEDDDD;
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.368px;
+}
   
-  .chartBox {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.chartBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   }
   
 .minicardBox {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   }
   
 .miniCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
   }
-  
+
+.miniCard:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 5px 5px #000000;
+}
+
 .musicContainer {
   display: flex;
   width: 100%;
-  max-width: 1300px;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -257,4 +251,259 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cardImageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.buttonListen {
+  background: linear-gradient(90deg, #ff6b00, #ff9f43);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttonListen:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 111, 0, 0.7);
+}
+
+/* ⭐ Playlist-ში დასამატებელი ღილაკი */
+.starButton {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 13px;
+  padding: 11px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.starButton:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.topHits {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.topTexts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.names {
+  color: #999;
+  text-decoration: none;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.names:hover {
+  color: #fff;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.musicName {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.chartBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.number {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+.chartText {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.topalbum {
+  display: flex;
+  flex-direction: column;
+}
+
+.artistBox {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.popArtist {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.popHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popularBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.popArt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.artName {
+  text-transform: capitalize;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* 🎶 Playlist Section */
+.playlistBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.youPlay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playlists, .plailists {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 📅 Weekly Section */
+.weeklyBox {
+  margin-top: 60px;
+}
+
+.weekly {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.weeklyHit {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.weeklyHit:hover {
+  transform: translateY(-5px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 1024px) {
+  .topCards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hit {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    width: 45%;
+  }
+
+  .weekly {
+    justify-content: center;
+  }
+
+  .miniCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    width: 100%;
+  }
+
+  .topCards {
+    flex-direction: column;
+  }
+}
+
+/* Modern circular play/pause button */
+.playButtonCard {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  bottom: 50%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.playButtonCard:hover {
+  background: linear-gradient(135deg, #0066ff, #42ee09);
+  transform: scale(1.2);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }

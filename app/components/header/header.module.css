@@ -60,15 +60,19 @@
   }
 
 .navItem {
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     color: white;
     font-size: 12px;
+    gap: 22px;
+}
+
+.item {
     transition: color 0.3s ease;
     transition: all 0.3s ease;
 }
 
-.navItem:hover {
+.item:hover {
     font-size: 20px;
     transform: translateY(-5px);
   }
@@ -92,10 +96,11 @@
 .userRegister {
     display: flex;
     padding: 10px 10px;
+    width: 70px;
+    height: 70px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #191A1F;
     transition: color 0.3s ease;
     transition: all 0.3s ease;
     gap: 10px;
@@ -103,4 +108,25 @@
 
 .userRegister:hover {
     transform: translateY(-5px);
+    background-color: #353952;
+}
+
+.pare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    gap: 10px;
+}
+
+.userText {
+    color: aliceblue;
 }

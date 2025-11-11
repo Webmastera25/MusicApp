@@ -8,6 +8,7 @@ interface Radio {
   name: string;
   url: string;
   logo: string;
+  language: "GE" | "ITA" | "FRA"; // ენები
 }
 
 const RadioPlayer: React.FC = () => {
@@ -17,10 +18,12 @@ const RadioPlayer: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const [volume, setVolume] = useState<number>(1);
   const [isMuted, setIsMuted] = useState<boolean>(false);
-  const [showAll, setShowAll] = useState<boolean>(false); // მართავს სრული/მინი სიის გადართვას
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<"GE" | "ITA" | "FRA">("GE");
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // რადიოების ჩატვირთვა API-დან
   useEffect(() => {
     fetch("/api/radios")
       .then((res) => res.json())
@@ -28,13 +31,19 @@ const RadioPlayer: React.FC = () => {
       .catch((err) => console.error("რადიო ვერ ჩაიტვირთა:", err));
   }, []);
 
+  // ხმის ცვლილების მართვა
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = isMuted ? 0 : volume;
     }
   }, [volume, isMuted]);
 
-  const currentRadio = radios[currentIndex];
+  // ფილტრი ენასა და საძიებო სიტყვის მიხედვით
+  const filteredRadios = radios
+    .filter((r) => r.language === selectedLanguage)
+    .filter((r) => r.name.toLowerCase().includes(search.toLowerCase()));
+
+  const currentRadio = filteredRadios[currentIndex];
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -49,48 +58,73 @@ const RadioPlayer: React.FC = () => {
   const toggleMute = () => setIsMuted((prev) => !prev);
 
   const nextRadio = () => {
-    setCurrentIndex((prev) => (prev + 1) % radios.length);
+    setCurrentIndex((prev) => (prev + 1) % filteredRadios.length);
     setIsPlaying(false);
   };
 
   const prevRadio = () => {
-    setCurrentIndex((prev) => (prev - 1 + radios.length) % radios.length);
+    setCurrentIndex((prev) => (prev - 1 + filteredRadios.length) % filteredRadios.length);
     setIsPlaying(false);
   };
 
-  const filteredRadios = radios.filter((r) =>
-    r.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  // მხოლოდ 3 რადიო ჩვენება, თუ showAll == false
   const radiosToShow = showAll ? filteredRadios : filteredRadios.slice(0, 3);
+
+  // ენის არჩევა
+  const handleLanguageChange = (lang: "GE" | "ITA" | "FRA") => {
+    setSelectedLanguage(lang);
+    setCurrentIndex(0);
+    setIsPlaying(false);
+  };
 
   return (
     <div className={styles.playerContainer}>
       <div className={styles.playerBox}>
-        <h2 className={styles.title}>📻 Radio</h2>
+        {/* ენის არჩევის ღილაკები */}
+        <div className={styles.languageButtons}>
+          <button
+            className={selectedLanguage === "GE" ? styles.activeLang : ""}
+            onClick={() => handleLanguageChange("GE")}
+          >
+            📻 GE
+          </button>
+          <button
+            className={selectedLanguage === "ITA" ? styles.activeLang : ""}
+            onClick={() => handleLanguageChange("ITA")}
+          >
+            📻 ITA
+          </button>
+          <button
+            className={selectedLanguage === "FRA" ? styles.activeLang : ""}
+            onClick={() => handleLanguageChange("FRA")}
+          >
+            📻 FRA
+          </button>
+        </div>
 
+        {/* საძიებო ველი */}
         <input
           type="text"
-          placeholder="🔍 მოძებნე არხი..."
+          placeholder="🔍 Find a Channel..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className={styles.search}
         />
 
         {currentRadio && (
-          <>
+          <div className={styles.radioBox}>
+            {/* მიმდინარე რადიო */}
             <div className={styles.currentRadio}>
+              <h3 className={styles.radioName}>{currentRadio.name}</h3>
               <Image
                 src={currentRadio.logo}
                 alt={currentRadio.name}
                 width={180}
                 height={180}
-                className={styles.radioLogo}
+                className={`${styles.radioLogo} ${isPlaying ? styles.rotating : ""}`}
               />
-              <h3 className={styles.radioName}>{currentRadio.name}</h3>
             </div>
 
+            {/* პლეიერი */}
             <div className={styles.playersBox}>
               <button onClick={prevRadio} className={styles.playerButton}>
                 <Image
@@ -123,6 +157,7 @@ const RadioPlayer: React.FC = () => {
                 />
               </button>
 
+              {/* ხმის კონტროლი */}
               <div className={styles.volumeControl}>
                 <button onClick={toggleMute} className={styles.muteBtn}>
                   {isMuted ? "🔇" : "🔊"}
@@ -146,9 +181,10 @@ const RadioPlayer: React.FC = () => {
               onPause={() => setIsPlaying(false)}
               autoPlay={isPlaying}
             />
-          </>
+          </div>
         )}
 
+        {/* რადიო სია */}
         <div className={styles.radioList}>
           {radiosToShow.map((radio, index) => (
             <div
@@ -177,7 +213,7 @@ const RadioPlayer: React.FC = () => {
               className={styles.showAllButton}
               onClick={() => setShowAll((prev) => !prev)}
             >
-              {showAll ? "აკეცვა ⬆️" : "ყველა რადიო ⬇️"}
+              {showAll ? "Folded ⬆️" : "Show All ⬇️"}
             </button>
           )}
         </div>

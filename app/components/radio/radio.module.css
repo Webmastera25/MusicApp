@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   margin: 50px auto;
   padding: 40px;
   border-radius: 32px;
@@ -21,14 +21,51 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
-  max-width: 600px;
 }
 
-.playersBox {
+.languageButtons {
   display: flex;
   justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.languageButtons button {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.languageButtons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, #ffc371, #ff5f6d);
+}
+
+.languageButtons button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.languageButtons .activeLang {
+  background: linear-gradient(135deg, #00ffea, #00c3ff);
+  box-shadow: 0 4px 10px rgba(0, 255, 234, 0.5);
+  color: #000;
+}
+
+/* Players box */
+.playersBox {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 20px;
@@ -50,7 +87,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
+  gap: 8px;
 }
 
 .radioItem {
@@ -90,10 +128,10 @@
 .radioName {
   cursor: pointer;
 }
+
 .volumeControl {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 
@@ -105,35 +143,24 @@
   cursor: pointer;
 }
 
-.volumeControl {
-  display: flex;
-  flex-direction: column; /* ვერტიკალური განლაგება */
-  align-items: center;
-  gap: 55px;
-}
-
 .volumeLine {
   position: relative;
-  height: 120px; /* სრული სიგრძე */
+  height: 120px;
   width: 8px;
-  background: #444; /* ფონი ხაზის */
+  background: #444;
   border-radius: 4px;
   display: flex;
-  align-items: flex-end; /* სლაიდერი ქვედან დაიწყოს */
+  align-items: flex-end;
 }
 
 .volumeSlider {
-  -webkit-appearance: none;
-  writing-mode: bt-lr; /* vertical slider */
-  transform: rotate(-90deg);
-  width: 120px; /* სიგრძე ხაზთან */
-  height: 8px; /* სიგანე ხაზთან */
+  width: 120px;
+  height: 8px;
   background: #ffffff;
   border-radius: 4px;
   cursor: pointer;
 }
 
-/* Chrome/Safari */
 .volumeSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 16px;
@@ -144,7 +171,6 @@
   cursor: pointer;
 }
 
-/* Firefox */
 .volumeSlider::-moz-range-thumb {
   width: 16px;
   height: 16px;
@@ -154,14 +180,20 @@
   cursor: pointer;
 }
 
-
-.radioItemLogo{
-  border-radius: 50%;
+.radioBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
 }
 
+.radioItemLogo,
 .radioLogo {
   border-radius: 50%;
 }
+
 .currentRadio {
   display: flex;
   flex-direction: column;
@@ -169,11 +201,21 @@
   align-items: center;
   gap: 22px;
 }
-/* radio.module.css */
 
+/* სექციის ტიტულები */
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  text-align: center;
+  color: #ff5f6d;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* showAll ღილაკები */
 .showAllButton {
   display: block;
-  margin: 15px auto 0;
+  margin: 10px auto 0;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
@@ -195,4 +237,13 @@
 .showAllButton:active {
   transform: translateY(0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes rotateDisc {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radioLogo.rotating {
+  animation: rotateDisc 5s linear infinite;
 }

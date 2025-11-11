@@ -1,0 +1,48 @@
+.page {
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    background: #121212;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffb400;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #1f1f1f;
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .removeBtn {
+    background: #ff4444;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .removeBtn:hover {
+    background: #ff6666;
+  }
+  
