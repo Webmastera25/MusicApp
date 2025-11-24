@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "artist": "ბანი",
+      "artist": "ჯგუფი ბანის",
       "title": "ჭინჭილა",
       "audioSrc": "/audio/ბანი-ჭინჭილა  bani-chinchila.mp3",
       "cover": "https://i.ytimg.com/vi/mhhKWxscE1A/hqdefault.jpg",
@@ -26,7 +26,7 @@
     },
       {
         "id": 4,
-        "artist": "მირაჟი",
+        "artist": "ჯგუფ მირაჟი",
         "title": " ქიცი ქიცი",
         "audioSrc": "/audio/ჯგუფი მირაჟი - გოგონია ქიცი ქიცი.mp3",
         "cover": "https://i.ytimg.com/vi/HgZxnvd6QM8/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4AC6AKKAgwIABABGH8gEygsMA8=&rs=AOn4CLDwBDzq1Ftv1PIOhGyv3iXGwe-3WA",

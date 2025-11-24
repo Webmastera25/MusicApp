@@ -143,8 +143,16 @@ export function Content() {
                   height={300}
                   style={{ borderRadius: "20px" }}
                 />
+    
                 <h4 className={styles.name}>{song.artist}</h4>
                 <span className={styles.musicName}>{song.title}</span>
+            
+                <button
+                  className={styles.starButton}
+                  onClick={() => addToPlaylist(song)}
+                >
+                  ⭐ Add to Playlist
+                </button>
 
                 <button
                     className={styles.playButtonCard}
@@ -174,15 +182,6 @@ export function Content() {
                       </svg>
                     )}
                   </button>
-
-
-
-                <button
-                  className={styles.starButton}
-                  onClick={() => addToPlaylist(song)}
-                >
-                  ⭐ Add to Playlist
-                </button>
               </div>
             ))}
           </div>
@@ -304,7 +303,8 @@ export function Content() {
                     src={p.image ?? p.cover ?? "/image/yourPlaylist/playlist-1.png"}
                     alt={p.title ?? ''}
                     width={183}
-                    height={121}
+                    height={131}
+                    style={{ borderRadius: "17px" }}
                   />
                   <h4 className={styles.name}>{p.artist}</h4>
                   <span className={styles.musicName}>{p.title}</span>

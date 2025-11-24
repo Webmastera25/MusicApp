@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./playlists.module.css";
+import Header from "../components/header/Header";
 
 interface Song {
   id: number;
   artist: string;
   title: string;
   image: string;
+  url: string;
 }
 
 export default function YourPlaylist() {
@@ -29,6 +31,7 @@ export default function YourPlaylist() {
 
   return (
     <div className={styles.page}>
+          <Header/>
       <h1 className={styles.title}>🎧 Your Playlist</h1>
       {playlist.length === 0 ? (
         <p>No songs added yet.</p>
@@ -46,6 +49,8 @@ export default function YourPlaylist() {
           ))}
         </div>
       )}
+
+      
     </div>
   );
 }
